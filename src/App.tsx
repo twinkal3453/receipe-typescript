@@ -1,26 +1,25 @@
 import React, {useEffect, useState} from 'react';
 import './App.css';
+import Home from './screens/Home'
+import About from './screens/About'
+import Users from './screens/Users'
+import Nav from './screens/Nav'
 
-function App() {
-  const [userName, setUserName] = useState('')
-  const name: string = "Twinkal";
+import { Routes, Route } from "react-router-dom";
 
-  const getValue = (data: string) => {
-    console.log("Line 8", data)
-    setUserName(name)
-  } 
-
-  useEffect(() => {
-    getValue(name)
-  }, [])
+interface pageName {
+  name: string;
+}
+function App() {   
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          {userName}
-        </p>
-      </header>
+      <Nav />
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/about' element={<About/>}/>
+        <Route path='/users' element={<Users/>}/>
+      </Routes>
     </div>
   );
 }
