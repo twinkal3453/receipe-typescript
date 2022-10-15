@@ -10,13 +10,14 @@ import { Routes, Route } from "react-router-dom";
 interface pageName {
   name: string;
 }
+
 function App() {   
 
   return (
     <div className="App">
       <Nav />
       <Routes>
-        <Route path='/' element={<Home/>}/>
+        <Route path='/' element={<Home />}/>
         <Route path='/about' element={<About/>}/>
         <Route path='/users' element={<Users/>}/>
       </Routes>
